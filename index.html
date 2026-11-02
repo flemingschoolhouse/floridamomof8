@@ -85,6 +85,30 @@ section{padding:46px 0 10px}
 .kicker2{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--hibiscus)}
 .links .link:nth-child(odd):last-child{grid-column:1/-1}
 
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;background:#fff;border-radius:24px;padding:26px;border:1px solid #e6ddd0}
+.contact h2{font-size:clamp(32px,6vw,48px);font-weight:800;color:var(--ocean);margin-bottom:10px}
+.contact p{margin:0 0 12px}
+.contact .mail{color:var(--muted);font-size:15px}
+.contact .mail a{color:var(--hibiscus);font-weight:700}
+#cform{display:grid;gap:12px}
+#cform label{display:grid;gap:5px;font-weight:600;font-size:14px;color:var(--ocean)}
+#cform input,#cform textarea{font:inherit;font-weight:400;font-size:16px;color:var(--ink);border:2px solid #d9cfc1;border-radius:12px;padding:11px 13px;background:var(--sand);width:100%}
+#cform input:focus,#cform textarea:focus{outline:none;border-color:var(--ocean);background:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:block!important}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:inline-block;border:2px solid var(--ocean);border-radius:999px;padding:7px 14px;font-size:14px;cursor:pointer;color:var(--ocean)}
+.seg input:checked+span{background:var(--ocean);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--hibiscus);outline-offset:2px}
+.trap{position:absolute;left:-9999px}
+#cform button{justify-self:start;border:0;cursor:pointer;font:inherit;font-weight:700}
+#cform button[disabled]{opacity:.6;cursor:wait}
+.cstatus{margin:0;font-weight:600}
+.cstatus.ok{color:#1d7a55}.cstatus.err{color:#b4233c}
+@media (max-width:720px){.contact,.row2{grid-template-columns:1fr}}
+
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
 .about p{margin:0 0 12px}
@@ -154,6 +178,9 @@ footer .glory span{color:var(--hibiscus)}
       <a class="link" href="https://www.facebook.com/share/1CeTGV8pZw/">
       <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8Z"/></svg></span>
       <span><b>Facebook</b><small>Follow our big-family life</small></span></a>
+    <a class="link" href="#contact">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+      <span><b>Contact &amp; collabs</b><small>Say hi or pitch a partnership</small></span></a>
   </nav>
 
   <section id="merch">
@@ -257,6 +284,33 @@ footer .glory span{color:var(--hibiscus)}
     </div>
   </section>
 
+  <section id="contact">
+    <div class="contact">
+      <div class="contact-intro">
+        <h2>Let's talk</h2>
+        <p>Want to say hi, pitch a brand collab or ask about a partnership? Send me a message and I'll get back to you.</p>
+        <p class="mail">Prefer email? <a href="mailto:hello@floridamomof8.com">hello@floridamomof8.com</a></p>
+      </div>
+      <form id="cform" novalidate>
+        <div class="seg" role="radiogroup" aria-label="What's this about?">
+          <label><input type="radio" name="reason" value="Just saying hi" checked><span>Just saying hi</span></label>
+          <label><input type="radio" name="reason" value="Brand collab"><span>Brand collab</span></label>
+          <label><input type="radio" name="reason" value="Partnership"><span>Partnership</span></label>
+          <label><input type="radio" name="reason" value="Something else"><span>Something else</span></label>
+        </div>
+        <div class="row2">
+          <label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
+          <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="c-company" id="c-company-wrap" hidden>Brand or company<input id="c-company" name="company" autocomplete="organization"></label>
+        <label for="c-msg">Message<textarea id="c-msg" name="message" rows="5" required></textarea></label>
+        <label class="trap" aria-hidden="true">Website<input id="c-web" name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn pink" type="submit" id="c-send">Send message</button>
+        <p class="cstatus" id="c-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -264,5 +318,25 @@ footer .glory span{color:var(--hibiscus)}
   <div>© 2026 Florida Mom of 8 · floridamomof8.com</div>
 </footer>
 
+<script>
+(function(){
+  var API = ""; // contact form web app URL goes here
+  var f=document.getElementById('cform'), st=document.getElementById('c-status'), btn=document.getElementById('c-send'),
+      cw=document.getElementById('c-company-wrap');
+  f.addEventListener('change',function(){var r=f.reason.value;cw.hidden=!(r==='Brand collab'||r==='Partnership');});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={reason:f.reason.value,name:f.name.value.trim(),email:f.email.value.trim(),company:f.company.value.trim(),message:f.message.value.trim(),website:f.website.value};
+    st.className='cstatus';
+    if(!d.name||!d.message||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){st.textContent='Please add your name, a valid email and a message.';st.className='cstatus err';return;}
+    if(!API){st.innerHTML='The form isn\'t switched on yet. Please email <a href="mailto:hello@floridamomof8.com">hello@floridamomof8.com</a>.';st.className='cstatus err';return;}
+    btn.disabled=true;btn.textContent='Sending…';
+    fetch(API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(d)})
+      .then(function(){f.reset();cw.hidden=true;st.textContent='Thank you! Your message was sent, and Grace will get back to you soon.';st.className='cstatus ok';})
+      .catch(function(){st.innerHTML='That didn\'t go through. Please try again or email <a href="mailto:hello@floridamomof8.com">hello@floridamomof8.com</a>.';st.className='cstatus err';})
+      .then(function(){btn.disabled=false;btn.textContent='Send message';});
+  });
+})();
+</script>
 </body>
 </html>
