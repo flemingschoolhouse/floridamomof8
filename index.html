@@ -28,8 +28,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:38px;background:var(--sand);
   clip-path:path("M0 20 C 120 0, 240 40, 360 20 S 600 0, 720 20 S 960 40, 1080 20 S 1320 0, 1440 20 S 1700 40, 2000 20 L2000 40 L0 40Z")}
 .hero-in{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-.photo{width:150px;height:150px;border-radius:50%;background:var(--seaglass);border:5px solid var(--hibiscus);
-  display:grid;place-items:center;color:var(--ocean);font-family:var(--display);font-size:64px;font-weight:800}
+.photo{margin:0;width:400px;background:#fff;padding:10px 10px 0;border-radius:18px;transform:rotate(-2.5deg);box-shadow:0 14px 30px #0006;position:relative}
+.photo img{display:block;width:100%;height:auto;border-radius:10px}
+.photo figcaption{font-family:var(--display);font-weight:800;color:var(--ocean);text-align:center;padding:8px 0 10px;font-size:18px}
+.photo::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:var(--hibiscus);opacity:.85;transform:rotate(3deg);border-radius:3px}
 .kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--seaglass)}
 .hero h1{font-size:clamp(44px,8vw,80px);font-weight:800;margin:6px 0 10px}
 .hero h1 span{color:var(--hibiscus)}
@@ -106,7 +108,7 @@ footer .glory span{color:var(--hibiscus)}
   .hero-in{grid-template-columns:1fr;text-align:center;justify-items:center}
   .hero p{margin-left:auto;margin-right:auto}.btns{justify-content:center}
   .links,.merch,.about,.live{grid-template-columns:1fr}
-  .photo{width:120px;height:120px;font-size:52px}
+  .photo{width:min(92%,380px);margin-bottom:8px}
 }
 @media (max-width:420px){ .sched{gap:3px} .day{font-size:11px;padding:8px 1px} .day b{font-size:13px} }
 @media (prefers-reduced-motion:reduce){ .link:hover{transform:none} }
@@ -117,7 +119,7 @@ footer .glory span{color:var(--hibiscus)}
 
 <header class="hero">
   <div class="wrap hero-in">
-    <div class="photo" aria-label="Photo of Grace goes here">G</div>
+    <figure class="photo"><img src="family.jpg" width="1055" height="1000" alt="Grace with her husband and their eight kids"><figcaption>all 10 of us!</figcaption></figure>
     <div>
       <div class="kicker">Jacksonville, Florida</div>
       <h1>Florida Mom <span>of 8</span></h1>
