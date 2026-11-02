@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florida Mom of 8</title>
+<meta name="description" content="Grace, a Florida mom of 8: faith, big-family life, TikTok live tips, merch and printables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{
+  /* Florida coast: deep ocean, hibiscus pink, sea-glass, sand. Link-in-bio column that widens into sections. */
+  --ocean:#0e3b4a; --ocean-2:#155566; --hibiscus:#e0457b; --seaglass:#bfe6dc; --sand:#fbf6ef; --ink:#13262d; --muted:#4f6670;
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--sand);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--hibiscus);outline-offset:3px;border-radius:10px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+
+/* hero */
+.hero{background:var(--ocean);color:#fff;padding:44px 0 56px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:38px;background:var(--sand);
+  clip-path:path("M0 20 C 120 0, 240 40, 360 20 S 600 0, 720 20 S 960 40, 1080 20 S 1320 0, 1440 20 S 1700 40, 2000 20 L2000 40 L0 40Z")}
+.hero-in{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.photo{width:150px;height:150px;border-radius:50%;background:var(--seaglass);border:5px solid var(--hibiscus);
+  display:grid;place-items:center;color:var(--ocean);font-family:var(--display);font-size:64px;font-weight:800}
+.kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--seaglass)}
+.hero h1{font-size:clamp(44px,8vw,80px);font-weight:800;margin:6px 0 10px}
+.hero h1 span{color:var(--hibiscus)}
+.hero p{max-width:34em;margin:0 0 18px;color:#dcecee}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;border:2px solid transparent}
+.btn.pink{background:var(--hibiscus);color:#fff}
+.btn.ghost{border-color:#ffffff88;color:#fff}
+
+/* link stack */
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0 8px}
+.link{display:flex;gap:14px;align-items:center;background:#fff;border:2px solid var(--ocean);border-radius:16px;padding:14px 16px;text-decoration:none;box-shadow:4px 4px 0 var(--ocean)}
+.link:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--hibiscus)}
+.ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--ocean);color:#fff;display:grid;place-items:center}
+.ico svg{width:24px;height:24px}
+.link b{display:block;font-size:17px}
+.link small{color:var(--muted);font-size:14px}
+.todo{outline:2px dashed var(--hibiscus);outline-offset:3px}
+
+section{padding:46px 0 10px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.sec-h h2{font-size:clamp(30px,5vw,44px);font-weight:800;color:var(--ocean)}
+.sec-h p{margin:0;color:var(--muted);max-width:30em}
+
+/* merch */
+.merch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{background:#fff;border-radius:20px;padding:18px;border:1px solid #e6ddd0;display:flex;flex-direction:column;gap:10px}
+.item svg{width:100%;max-width:230px;margin:0 auto;height:auto;display:block}
+.item h3{font-size:22px;color:var(--ocean)}
+.item p{margin:0;color:var(--muted);font-size:15px}
+.pill{align-self:flex-start;background:var(--seaglass);color:var(--ocean);font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px}
+
+/* live schedule */
+.live{background:var(--ocean);color:#fff;border-radius:24px;padding:26px;display:grid;grid-template-columns:1.1fr 1fr;gap:26px}
+.live h2{color:#fff}
+.live p{color:#dcecee;margin:10px 0 0}
+.sched{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-self:center}
+.day{background:var(--ocean-2);border-radius:12px;padding:10px 4px;text-align:center;font-size:13px}
+.day b{display:block;font-family:var(--display);font-size:16px;margin-bottom:4px}
+.day i{font-style:normal;display:block;background:var(--hibiscus);border-radius:6px;margin:3px 2px;padding:2px 0;font-weight:700;font-variant-numeric:tabular-nums}
+.day.off{background:transparent;border:1px dashed #ffffff66;color:#cfe3e6}
+.day.off i{background:transparent;font-weight:400}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.topics span{border:1px solid #ffffff55;border-radius:999px;padding:5px 12px;font-size:14px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.about p{margin:0 0 12px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.fact{background:#fff;border-radius:16px;padding:16px;border:1px solid #e6ddd0}
+.fact b{display:block;font-family:var(--display);font-size:36px;color:var(--hibiscus);line-height:1}
+.fact span{color:var(--muted);font-size:14px}
+
+/* shop */
+.shop{background:var(--seaglass);border-radius:24px;padding:26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.shop h2{color:var(--ocean);font-size:clamp(26px,4vw,36px)}
+.shop p{margin:6px 0 0;max-width:34em}
+.btn.dark{background:var(--ocean);color:#fff}
+
+footer{margin-top:50px;background:var(--ocean);color:#cfe3e6;padding:30px 0;text-align:center}
+footer .glory{font-family:var(--display);font-size:26px;color:#fff;font-weight:800}
+footer .glory span{color:var(--hibiscus)}
+
+.draft{background:var(--hibiscus);color:#fff;text-align:center;font-size:14px;padding:8px 14px;font-weight:500}
+
+@media (max-width:720px){
+  .hero-in{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .hero p{margin-left:auto;margin-right:auto}.btns{justify-content:center}
+  .links,.merch,.about,.live{grid-template-columns:1fr}
+  .photo{width:120px;height:120px;font-size:52px}
+}
+@media (max-width:420px){ .sched{gap:3px} .day{font-size:11px;padding:8px 1px} .day b{font-size:13px} }
+@media (prefers-reduced-motion:reduce){ .link:hover{transform:none} }
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <div class="photo" aria-label="Photo of Grace goes here">G</div>
+    <div>
+      <div class="kicker">Jacksonville, Florida</div>
+      <h1>Florida Mom <span>of 8</span></h1>
+      <p>Hi, I'm Grace. Wife, mama of eight, homeschooler, and TikTok LIVE host. I go live every morning to help creators grow and get paid on TikTok, and I share the beautiful chaos of big-family life along the way.</p>
+      <div class="btns">
+        <a class="btn pink" href="#live">Catch me LIVE</a>
+        <a class="btn ghost" href="#merch">Shop the merch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="links" aria-label="My links">
+    <a class="link" href="#merch">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0Z"/></svg></span>
+      <span><b>Merch</b><small>Shirts, hats &amp; tumblers</small></span></a>
+    <a class="link" href="https://www.etsy.com/shop/GraceFilledLearnCo">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h10l4 4v14H5Z M14 3v5h5 M8 13h8 M8 17h6"/></svg></span>
+      <span><b>Homeschool printables</b><small>GraceFilledLearnCo on Etsy</small></span></a>
+  </nav>
+
+  <section id="merch">
+    <div class="sec-h">
+      <h2>The merch you asked for</h2>
+      <p>Three phrases I live by, on shirts, hats and tumblers. Printed to order and shipped to your door.</p>
+    </div>
+    <div class="merch">
+      <div class="item">
+        <svg viewBox="0 0 200 170" role="img" aria-label="T-shirt that says Jesus Changes Everything">
+          <path d="M62 14 22 34l14 30 16-8v104h96V56l16 8 14-30-40-20c-6 12-20 20-38 20s-32-8-38-20Z" fill="#0e3b4a"/>
+          <text x="100" y="92" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" fill="#fff">JESUS</text>
+          <text x="100" y="110" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" fill="#e0457b">CHANGES</text>
+          <text x="100" y="128" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="12" fill="#fff">EVERYTHING</text>
+        </svg>
+        <span class="pill">Coming soon</span>
+        <h3>Jesus Changes Everything</h3>
+        <p>Tee and crewneck.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 200 170" role="img" aria-label="Tumbler that says All For His Glory">
+          <rect x="66" y="10" width="68" height="14" rx="4" fill="#155566"/>
+          <path d="M62 26h76l-8 136H70Z" fill="#bfe6dc"/>
+          <path d="M138 50h14a10 10 0 0 1 10 10v30a10 10 0 0 1-10 10h-16" fill="none" stroke="#155566" stroke-width="8"/>
+          <text x="100" y="80" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="14" fill="#0e3b4a">ALL FOR</text>
+          <text x="100" y="98" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="14" fill="#e0457b">HIS</text>
+          <text x="100" y="116" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="14" fill="#0e3b4a">GLORY</text>
+        </svg>
+        <span class="pill">Coming soon</span>
+        <h3>All For His Glory</h3>
+        <p>Tumbler with straw.</p>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 200 170" role="img" aria-label="Hat that says Do It Scared">
+          <path d="M40 112c0-46 26-74 60-74s60 28 60 74Z" fill="#e0457b"/>
+          <path d="M30 112h140c10 0 14 10 6 16-22 14-120 14-152 0-8-6-4-16 6-16Z" fill="#0e3b4a"/>
+          <circle cx="100" cy="38" r="6" fill="#0e3b4a"/>
+          <text x="100" y="96" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="12.5" fill="#fff">DO IT SCARED</text>
+        </svg>
+        <span class="pill">Coming soon</span>
+        <h3>Do It Scared</h3>
+        <p>Embroidered cap.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="live">
+    <div class="live">
+      <div>
+        <h2>Come hang out on my LIVE</h2>
+        <p>Every morning I teach how to go live, grow your followers and make money on TikTok. Ask me anything. Sundays are for church and family.</p>
+        <div class="topics"><span>Going LIVE</span><span>Growing followers</span><span>Monetizing</span><span>TikTok Shop</span><span>Trivia rounds</span></div>
+      </div>
+      <div class="sched" aria-label="Weekly live schedule, Eastern time">
+        <div class="day"><b>Mon</b><i>7a</i><i>3p</i></div>
+        <div class="day"><b>Tue</b><i>7a</i><i>3p</i></div>
+        <div class="day"><b>Wed</b><i>7a</i><i>3p</i></div>
+        <div class="day"><b>Thu</b><i>7a</i><i>3p</i></div>
+        <div class="day"><b>Fri</b><i>7a</i><i>3p</i></div>
+        <div class="day"><b>Sat</b><i>7a</i><i>3p</i></div>
+        <div class="day off"><b>Sun</b><i>off</i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-h"><h2>About me</h2></div>
+    <div class="about">
+      <div>
+        <p>I'm a stay-at-home, homeschooling mama of eight here in Jacksonville. Our house is loud, full of laundry, and full of grace.</p>
+        <p>I started going LIVE on TikTok in December and hit 10,000 followers in my first full month. Now I help other creators do the same, without losing sight of what matters most.</p>
+        <p>Everything I do is for His glory.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>8</b><span>kids, ages 1 to 13</span></div>
+        <div class="fact"><b>6</b><span>days a week LIVE</span></div>
+        <div class="fact"><b>18K+</b><span>TikTok followers</span></div>
+        <div class="fact"><b>2</b><span>LIVEs a day</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shop">
+      <div>
+        <h2>Homeschooling too?</h2>
+        <p>The printables I make for my own kids, like Multiplication Mastery, are in my Etsy shop.</p>
+      </div>
+      <a class="btn dark" href="https://www.etsy.com/shop/GraceFilledLearnCo">Visit GraceFilledLearnCo</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="glory">All For <span>His</span> Glory</div>
+  <div>© 2026 Florida Mom of 8 · floridamomof8.com</div>
+</footer>
+
+</body>
+</html>
