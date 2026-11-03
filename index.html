@@ -123,6 +123,15 @@ section{padding:46px 0 10px}
 .shop p{margin:6px 0 0;max-width:34em}
 .btn.dark{background:var(--ocean);color:#fff}
 
+/* bless */
+.bless{background:linear-gradient(135deg,#fff 0%,#fff 55%,#fde8ef 100%);border:3px solid var(--hibiscus);border-radius:24px;padding:28px;text-align:center;position:relative;overflow:hidden}
+.bless .heart{font-size:44px;line-height:1}
+.bless h2{font-size:clamp(30px,5.5vw,46px);font-weight:800;color:var(--ocean);margin:6px 0 10px}
+.bless p{max-width:34em;margin:0 auto 12px}
+.bless .soft{color:var(--muted);font-size:15px}
+.bless .btns{justify-content:center;margin:18px 0 6px}
+.bless .btn.ghost2{font:inherit;font-weight:700;cursor:pointer;background:#fff;color:var(--ocean);border:2px solid var(--ocean)}
+.bless .verse{font-style:italic;color:var(--muted);font-size:14px;margin-top:14px}
 footer{margin-top:50px;background:var(--ocean);color:#cfe3e6;padding:30px 0;text-align:center}
 footer .glory{font-family:var(--display);font-size:26px;color:#fff;font-weight:800}
 footer .glory span{color:var(--hibiscus)}
@@ -178,6 +187,9 @@ footer .glory span{color:var(--hibiscus)}
       <a class="link" href="https://www.facebook.com/share/1CeTGV8pZw/">
       <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8Z"/></svg></span>
       <span><b>Facebook</b><small>Follow our big-family life</small></span></a>
+    <a class="link" href="#bless">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.1 4.6 2.6l1 1.4 1-1.4C14 6.1 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21Z"/></svg></span>
+      <span><b>Bless our family</b><small>Love on the Fleming crew, no strings attached</small></span></a>
     <a class="link" href="#contact">
       <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
       <span><b>Contact &amp; collabs</b><small>Say hi or pitch a partnership</small></span></a>
@@ -272,6 +284,19 @@ footer .glory span{color:var(--hibiscus)}
     </div>
   </section>
 
+  <section id="bless">
+    <div class="bless">
+      <div class="heart">💛</div>
+      <h2>Bless the Fleming Crew</h2>
+      <p>So many of you have asked how you can love on our family directly, with no middleman taking a cut. If God puts it on your heart, you can here. No strings attached, and never expected.</p>
+      <p class="soft">Can't give right now? A share, a follow or a prayer for our family means just as much. We're so grateful for every one of you. 🙏</p>
+      <div class="btns">
+        <a class="btn pink" href="https://www.paypal.com/qrcodes/p2pqrc/MLE4Y97PR9SP4" rel="noopener">💛 Bless our family</a>
+        <button class="btn ghost2" type="button" id="share-site">Share this page</button>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="contact">
       <div class="contact-intro">
@@ -325,6 +350,9 @@ footer .glory span{color:var(--hibiscus)}
       .then(function(){btn.disabled=false;btn.textContent='Send message';});
   });
 })();
+(function(){var b=document.getElementById('share-site');if(!b)return;b.addEventListener('click',function(){
+  var d={title:'Florida Mom of 8',text:'Come hang out with the Fleming crew!',url:'https://floridamomof8.com'};
+  if(navigator.share){navigator.share(d).catch(function(){})}else{try{navigator.clipboard.writeText(d.url);b.textContent='Link copied! 💛'}catch(e){}}});})();
 </script>
 </body>
 </html>
