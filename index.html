@@ -109,6 +109,24 @@ section{padding:46px 0 10px}
 .cstatus.ok{color:#1d7a55}.cstatus.err{color:#b4233c}
 @media (max-width:720px){.contact,.row2{grid-template-columns:1fr}}
 
+/* launch */
+.launch-bar{display:block;background:var(--hibiscus);color:#fff;text-align:center;text-decoration:none;padding:11px 14px;font-weight:700;letter-spacing:.02em;font-size:15px}
+.launch-bar b{text-decoration:underline;text-underline-offset:3px}
+.btn.big{font-size:19px;padding:15px 26px;box-shadow:0 6px 0 #a8285a}
+.launch{background:linear-gradient(180deg,var(--sand) 0%,#fde8ef 100%);padding:40px 0 46px}
+.launch-head{text-align:center;margin-bottom:26px}
+.launch-head h2{font-size:clamp(46px,11vw,96px);font-weight:800;color:var(--ocean);line-height:.95;margin:10px 0 12px}
+.launch-head h2 span{color:var(--hibiscus)}
+.launch-head p{max-width:32em;margin:0 auto 20px;font-size:18px}
+.burst{display:inline-block;background:var(--ocean);color:#fff;font-family:var(--display);font-weight:800;letter-spacing:.12em;font-size:14px;padding:7px 16px;border-radius:999px;transform:rotate(-3deg)}
+a.item{text-decoration:none;color:inherit;border:3px solid var(--ocean);box-shadow:6px 6px 0 var(--hibiscus);transition:transform .15s}
+a.item:hover{transform:translate(-2px,-2px)}
+.pill.hot{background:var(--hibiscus);color:#fff}
+.buy{margin-top:auto;font-family:var(--display);font-weight:800;font-size:20px;color:var(--hibiscus)}
+.link.star{border-color:var(--hibiscus);box-shadow:4px 4px 0 var(--hibiscus);background:#fff5f8}
+.link.star .ico{background:var(--hibiscus)}
+@media (prefers-reduced-motion:reduce){a.item:hover{transform:none}}
+
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
 .about p{margin:0 0 12px}
@@ -151,6 +169,8 @@ footer .glory span{color:var(--hibiscus)}
 <body>
 
 
+<a class="launch-bar" href="https://floridamomof8.printify.me"><span>🎉 THE MERCH IS HERE!</span> <b>Shop now →</b></a>
+
 <header class="hero">
   <div class="wrap hero-in">
     <figure class="photo"><img src="family.jpg" width="1100" height="1142" alt="Grace, her husband and their eight kids at a Jacksonville ballgame"><figcaption>all 10 of us!</figcaption></figure>
@@ -159,16 +179,53 @@ footer .glory span{color:var(--hibiscus)}
       <h1>Florida Mom <span>of 8</span></h1>
       <p>Hi, I'm Grace. Wife, mama of eight, TikTok LIVE host, and Growth Manager with Gravitas Q. I go live every morning to help creators grow and get paid on TikTok, and I share the beautiful chaos of big-family life along the way.</p>
       <div class="btns">
-        <a class="btn pink" href="https://www.tiktok.com/@floridamomof8">Follow @floridamomof8</a>
-        <a class="btn ghost" href="https://weare.gravitasq.com/takeover64022380">Join Team Takeover</a>
-      </div>
+        <a class="btn pink big" href="https://floridamomof8.printify.me">🛍️ Shop the merch</a>
+        <a class="btn ghost" href="https://www.tiktok.com/@floridamomof8">Follow @floridamomof8</a>
+              </div>
     </div>
   </div>
 </header>
 
+<section id="merch" class="launch">
+  <div class="wrap">
+    <div class="launch-head">
+      <div class="burst">NOW OPEN</div>
+      <h2>The merch is <span>HERE!</span></h2>
+      <p>You asked, and it's finally here. Three phrases I live by, printed to order and shipped right to your door.</p>
+      <a class="btn pink big" href="https://floridamomof8.printify.me">Shop all merch →</a>
+    </div>
+    <div class="merch">
+      <a class="item" href="https://floridamomof8.printify.me">
+        <img class="mock" src="jce-crewneck.jpg" width="900" height="819" alt="Cream crewneck sweatshirt with pink bubble letters that say Jesus Changes Everything, with daisies and a gingham bow">
+        <span class="pill hot">Shop now</span>
+        <h3>Jesus Changes Everything</h3>
+        <p>Cream crewneck sweatshirt.</p>
+        <span class="buy">Buy now →</span>
+      </a>
+      <a class="item" href="https://floridamomof8.printify.me">
+        <img class="mock" src="dis-bottle.jpg" width="900" height="903" alt="Stainless steel water bottle with a floral Do It Scared design">
+        <span class="pill hot">Shop now</span>
+        <h3>Do It Scared</h3>
+        <p>Floral 32 oz water bottle.</p>
+        <span class="buy">Buy now →</span>
+      </a>
+      <a class="item" href="https://floridamomof8.printify.me">
+        <img class="mock" src="afhg-trucker.jpg" width="900" height="880" alt="Black and white trucker hat that says All For His Glory">
+        <span class="pill hot">Shop now</span>
+        <h3>All For His Glory</h3>
+        <p>Black and white trucker hat.</p>
+        <span class="buy">Buy now →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <main class="wrap">
 
   <nav class="links" aria-label="My links">
+    <a class="link star" href="https://floridamomof8.printify.me">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0Z"/></svg></span>
+      <span><b>Merch shop · NOW OPEN</b><small>Crewnecks, hats &amp; water bottles</small></span></a>
     <a class="link" href="https://www.tiktok.com/@floridamomof8">
       <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.4 4.4 0 0 1-4.4-4.5Z"/></svg></span>
       <span><b>TikTok @floridamomof8</b><small>LIVE Mon–Sat, 7 AM &amp; 3 PM ET</small></span></a>
@@ -178,9 +235,6 @@ footer .glory span{color:var(--hibiscus)}
     <a class="link" href="https://weare.gravitasq.com/takeover64022380">
       <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.3c3 0 6 2 6 5.7"/></svg></span>
       <span><b>Team Takeover</b><small>Apply to join my LIVE creator team</small></span></a>
-    <a class="link" href="https://floridamomof8.printify.me">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0Z"/></svg></span>
-      <span><b>Merch shop</b><small>Coming soon · shirts, hats &amp; tumblers</small></span></a>
     <a class="link" href="https://www.etsy.com/shop/GraceFilledLearnCo">
       <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h10l4 4v14H5Z M14 3v5h5 M8 13h8 M8 17h6"/></svg></span>
       <span><b>Homeschool printables</b><small>GraceFilledLearnCo on Etsy</small></span></a>
@@ -195,33 +249,7 @@ footer .glory span{color:var(--hibiscus)}
       <span><b>Contact &amp; collabs</b><small>Say hi or pitch a partnership</small></span></a>
   </nav>
 
-  <section id="merch">
-    <div class="sec-h">
-      <h2>The merch you asked for</h2>
-      <p>Three phrases I live by, on shirts, hats and tumblers. Final designs and more products are on the way. Printed to order and shipped to your door.</p>
-    </div>
-    <div class="merch">
-      <div class="item">
-        <img class="mock" src="jce-crewneck.jpg" width="900" height="819" alt="Cream crewneck sweatshirt with pink bubble letters that say Jesus Changes Everything, with daisies and a gingham bow">
-        <span class="pill">Coming soon</span>
-        <h3>Jesus Changes Everything</h3>
-        <p>Cream crewneck sweatshirt.</p>
-      </div>
-      <div class="item">
-        <img class="mock" src="dis-bottle.jpg" width="900" height="903" alt="Stainless steel water bottle with a floral Do It Scared design">
-        <span class="pill">Coming soon</span>
-        <h3>Do It Scared</h3>
-        <p>Floral 32 oz water bottle.</p>
-      </div>
-      <div class="item">
-        <img class="mock" src="afhg-trucker.jpg" width="900" height="880" alt="Black and white trucker hat that says All For His Glory">
-        <span class="pill">Coming soon</span>
-        <h3>All For His Glory</h3>
-        <p>Black and white trucker hat.</p>
-      </div>
-    </div>
-    <div class="btns" style="margin-top:20px;justify-content:center"><a class="btn dark" href="https://floridamomof8.printify.me">Peek at the merch shop</a></div>
-  </section>
+  
 
   <section id="live">
     <div class="live">
