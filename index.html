@@ -127,6 +127,22 @@ a.item:hover{transform:translate(-2px,-2px)}
 .link.star .ico{background:var(--hibiscus)}
 @media (prefers-reduced-motion:reduce){a.item:hover{transform:none}}
 
+
+/* discord */
+.discord{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin:28px 0 0;background:#5865f2;color:#fff;border:3px solid var(--ocean);border-radius:22px;padding:20px 22px;text-decoration:none;box-shadow:6px 6px 0 var(--ocean);transition:transform .15s}
+.discord:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--hibiscus)}
+.discord .dico{width:64px;height:64px;border-radius:18px;background:#fff;color:#5865f2;display:grid;place-items:center}
+.discord .dico svg{width:40px;height:40px}
+.discord .kick{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:#dfe2ff}
+.discord h2{font-size:clamp(24px,4.5vw,34px);font-weight:800;margin:2px 0 6px;color:#fff}
+.discord p{margin:0 0 10px;color:#eef0ff;font-size:16px}
+.discord .tags{display:flex;flex-wrap:wrap;gap:6px}
+.discord .tags span{background:#ffffff26;border:1px solid #ffffff55;border-radius:999px;padding:3px 11px;font-size:13px;font-weight:600}
+.discord .join{background:#fff;color:#5865f2;font-family:var(--display);font-weight:800;font-size:18px;padding:13px 22px;border-radius:999px;white-space:nowrap}
+.discord + .links{margin-top:18px}
+@media (max-width:720px){.discord{grid-template-columns:1fr;text-align:center;justify-items:center}.discord .tags{justify-content:center}}
+@media (prefers-reduced-motion:reduce){.discord:hover{transform:none}}
+
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
 .about p{margin:0 0 12px}
@@ -221,6 +237,17 @@ footer .glory span{color:var(--hibiscus)}
 </section>
 
 <main class="wrap">
+
+  <a class="discord" href="https://discord.gg/tKGyWbzRr">
+    <span class="dico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 5.3A17.6 17.6 0 0 0 15.3 4l-.6 1.1a16 16 0 0 0-5.4 0L8.7 4a17.6 17.6 0 0 0-4.3 1.3C1.6 9.4.9 13.4 1.2 17.4a17.8 17.8 0 0 0 5.3 2.6l1.1-1.8c-.6-.2-1.2-.5-1.8-.9l.4-.3a12.6 12.6 0 0 0 11.6 0l.4.3c-.6.4-1.2.7-1.8.9l1.1 1.8a17.7 17.7 0 0 0 5.3-2.6c.4-4.6-.7-8.6-3.2-12.1ZM8.5 15c-1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2Zm7 0c-1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2Z"/></svg></span>
+    <span>
+      <span class="kick">Our community</span>
+      <h2>Join our Discord!</h2>
+      <p>Stay connected with the community and reach me the easy way. No more getting lost in TikTok DMs.</p>
+      <span class="tags"><span>LIVE alerts</span><span>Chats</span><span>Self promo</span><span>Battle chat</span><span>All the things!</span></span>
+    </span>
+    <span class="join">Join the Discord →</span>
+  </a>
 
   <nav class="links" aria-label="My links">
     <a class="link star" href="https://floridamomof8.printify.me">
